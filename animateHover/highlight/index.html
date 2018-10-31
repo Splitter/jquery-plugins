@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>SV Highlight Plugin</title>
+	<script type="text/javascript" src="./scripts/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./scripts/jquery.plugins.min.js"></script>
+	
+	<script type="text/javascript" src="./scripts/sv_initialize.js"></script>
+	<link rel="stylesheet" href="./style.css" />
+	
+</head>
+<body>
+	<div class="header">
+		<h1>
+			<span class="big_text">
+				SV Highlight
+			</span>
+			<span class="small_text">
+				fade highlighting plugin
+			</span>
+		</h1>
+	</div>
+	
+
+	
+	<div class="heading">
+		<h2>> Fade Highlighting Plugin</h2>
+	</div>
+	<div class="block">
+		<div class="top">	
+			<p>
+			Hover the mouse over one element and other similar elements fade out to provide a 'highlight' effect.
+			A very useful plugin for galleries as well as portfolio pages.
+			</p>
+			<h3>Example:</h3>
+			<div class="div_block">
+			</div>
+			<div class="div_block">
+			</div>
+			<div class="div_block">
+			</div>
+			<div class="clear"></div>
+			<h3>The Code:</h3>
+			<pre><code>var opts = {
+   opacity: 0.4,
+   speed:600
+};
+$('div.div_block').sv_highlight(opts);</code></pre>
+		
+			
+			<br/><br/>
+			<p>
+			There is another optional parameter, 'selector', which allows
+			you to fade out a custom selector instead of other similar elements.
+			</p>			
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	
+
+</body>
+</html>

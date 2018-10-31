@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>SV Hover Animate Plugin</title>
+	<script type="text/javascript" src="./scripts/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./scripts/jquery.plugins.min.js"></script>
+	
+	<script type="text/javascript" src="./scripts/sv_initialize.js"></script>
+	<link rel="stylesheet" href="./style.css" />
+	
+</head>
+<body>
+	<div class="header">
+		<h1>
+			<span class="big_text">
+				SV AnimateHover
+			</span>
+			<span class="small_text">
+				the ultimate hover animation plugin
+			</span>
+		</h1>
+	</div>
+	<div class="heading">
+		<h2>> Link Nudging Example</h2>
+	</div>
+	<div class="block">
+		<div class="top link_nudge">	
+			<h3>Example:</h3>
+				<ul>
+					<li><a href="#"> The First Item</a></li>
+					<li><a href="#"> Another one Here</a></li>
+					<li><a href="#"> Yet One more LI</a></li>
+					<li><a href="#"> And Here's One Last</a></li>
+				</ul>	
+			<h3>The Code:</h3>
+			<pre><code>var opts={
+	change	:	'15px',
+	attr 	:	'margin-left',
+	speed	:	400
+	};
+$('div.link_nudge > ul > li').sv_animatehover(opts);</code></pre>
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	<div class="heading">
+		<h2>> Garage Door Example</h2>
+	</div>
+	<div class="block">
+		<div class="top garage">	
+			<p>This example uses a child selector to animate a child element when the parent is hovered over</p>
+			<h3>Example:</h3>
+			<div class="div_block">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="div_block">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="div_block">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="clear"></div>
+			<h3>The Code:</h3>
+						<pre><code>var opts={
+	change	:	'-130px',
+	attr 	:	'top',
+	selector:	'div.overlay',
+	speed	:	400
+};
+$('div.div_block').sv_animatehover(opts);</code></pre>
+		
+			
+			
+			
+			
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	
+	<div class="heading">
+		<h2>> Sliding Overlay Example</h2>
+	</div>
+	<div class="block">
+		<div class="top overlay">	
+			<p>
+				This example makes use of multiple animations and queue's them in order
+				to play one animation after the other instead of simultaneously.
+			</p>
+			<h3>Example:</h3>
+			
+			<div class="div_block div_overlay">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="div_block div_overlay">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="div_block div_overlay">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="clear"></div>
+			<h3>The Code:</h3>
+						<pre><code>var opts={	
+	change	:	[ '-80px', '40px'  ],
+	attr 	: 	[ 'top'  , 'height'],
+	selector:	'div.overlay',
+	speed	:	400,
+	queue	:	true
+};
+$('div.div_overlay').sv_animatehover(opts);</code></pre>
+			
+			
+			
+		</div>
+		
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	
+	<div class="heading">
+		<h2>> Drop Down Menu Example</h2>
+	</div>
+	<div class="block">
+		<div class="top overlay">	
+			<p>
+				This example makes use of multiple animations and plays them simultaneously.
+			</p>
+			<h3>Example:</h3>
+			
+			
+			<div class="menu">
+				<ul>
+					<li> Menu Item
+						<ul>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+						</ul>	
+					</li>
+					<li> Menu Item
+						<ul>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+						</ul>	
+					</li>
+					<li> Menu Item
+						<ul>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+						</ul>	
+					</li>
+					<li> Menu Item
+						<ul>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+							<li>SubMenu Item</li>
+						</ul>	
+					</li>
+				</ul>			
+			</div>
+			
+			
+			
+			<div class="clear"></div>
+			<h3>The Code:</h3>
+						<pre><code>var opts={
+	change:[ '120px' , '170px' ,     1    ],
+	attr : [ 'width' , 'height', 'opacity'],
+	selector:'ul',
+	speed:400,
+	queue:false
+};
+$('div.menu > ul > li').sv_animatehover(opts);</code></pre>
+			
+			
+			
+		</div>
+		
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	<div class="heading">
+		<h2>> Conclusion</h2>
+	</div>
+	<div class="block">
+		<div class="top overlay">	
+			<p>
+				This jQuery plugin is one of most versatile plugins in my arsenal. Less then
+				70 lines of code and it shortens the workload of creating an endless amount
+				of effects.	In short, the uses for it are only limited by the imagination of the developer
+				using it.
+			</p>			
+		</div>		
+		<div class="bottom"></div>	
+	</div>
+</body>
+</html>

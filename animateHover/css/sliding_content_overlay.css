@@ -1,0 +1,150 @@
+
+.moving_content{
+border:1px solid #222;
+float:left;
+height:154px;
+width:174px;
+margin-left:20px;
+position:relative;
+overflow:hidden;
+}
+.moving_content div.background{
+background:#222;
+height:154px;
+width:174px;
+position:relative;
+overflow:hidden;
+padding:0;
+margin:0;
+color:#eee;
+z-index:5;
+}
+.moving_content div.background img{
+top:0px;
+position:relative;
+}
+.moving_content div.overlay{
+background:#222;
+width:174px;
+height:80px;
+top:0px;
+z-index:10;
+position:relative;
+padding:10px;
+color:#888;
+}
+
+
+
+
+.moving_content2{
+border:1px solid #222;
+float:left;
+height:154px;
+width:174px;
+margin-left:20px;
+position:relative;
+overflow:hidden;
+}
+.moving_content2 div.background{
+background:#222;
+height:154px;
+width:174px;
+position:relative;
+overflow:hidden;
+padding:0;
+margin:0;
+color:#eee;
+z-index:5;
+}
+.moving_content2 div.background img{
+top:0px;
+position:relative;
+}
+.moving_content2 div.overlay{
+background:#222;
+width:174px;
+height:80px;
+top:0px;
+z-index:10;
+position:relative;
+padding:10px;
+color:#888;
+}
+
+
+
+
+
+.moving_content3{
+border:1px solid #222;
+float:left;
+height:154px;
+width:174px;
+margin-left:20px;
+position:relative;
+overflow:hidden;
+}
+.moving_content3 div.background{
+background:#222;
+height:154px;
+width:174px;
+position:relative;
+overflow:hidden;
+padding:0;
+margin:0;
+color:#eee;
+z-index:5;
+}
+.moving_content3 div.background img{
+top:20px;
+position:relative;
+}
+.moving_content3 div.overlay{
+background:#222;
+width:174px;
+height:80px;
+top:-40px;
+z-index:10;
+position:relative;
+padding:10px;
+color:#888;
+}
+
+
+
+
+.moving_content4{
+border:1px solid #222;
+float:left;
+height:154px;
+width:174px;
+margin-left:20px;
+position:relative;
+overflow:hidden;
+}
+.moving_content4 div.background{
+background:#222;
+height:154px;
+width:174px;
+position:relative;
+overflow:hidden;
+padding:0;
+margin:0;
+color:#eee;
+z-index:5;
+}
+.moving_content4 div.background img{
+top:-10px;
+position:relative;
+}
+.moving_content4 div.overlay{
+background:#222;
+width:174px;
+height:80px;
+top:-40px;
+z-index:10;
+position:relative;
+padding:10px;
+color:#888;
+}

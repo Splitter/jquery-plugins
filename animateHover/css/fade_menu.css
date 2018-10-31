@@ -1,0 +1,63 @@
+
+	
+	
+#fade_menu  {
+	height: 70px;
+	clear:both;
+	padding:0px;
+	margin:0px;
+	}
+#fade_menu ul{
+	width:460px;
+	height:70px;
+	margin:0 auto;
+	}
+#fade_menu ul li{
+	float:left;
+	display: block;
+	outline: none;
+	height: 70px;
+	text-decoration: none;
+	width: auto;
+	overflow:hidden;
+	text-indent:-1000px;
+	}
+#fade_menu ul li a{
+	height:70px;
+	display:block;
+	}
+#fade_menu .home a{
+	background: url(../images/home.jpg) no-repeat top left;
+	width:101px;
+}
+#fade_menu .about a{
+	background: url(../images/about.jpg) no-repeat top left;
+	width:115px;
+	background-position: 0 0;
+}
+#fade_menu .portfolio a{
+	background: url(../images/portfolio.jpg) no-repeat top left;
+	background-position: 0 0;
+	width: 120px;
+}
+#fade_menu .contact a{
+	background: url(../images/contact.jpg) no-repeat top left;
+	background-position: 0 0;
+	width: 115px;
+}
+#fade_menu .home a:hover{
+	width:101px;
+	background-position: 0px -70px;
+}
+#fade_menu .about a:hover{
+	width:115px;
+	background-position: 0px -70px;
+}
+#fade_menu .portfolio a:hover{
+	background-position: 0px -70px;
+	width: 120px;
+}
+#fade_menu .contact a:hover{
+	background-position: 0px -70px;
+	width: 115px;
+}

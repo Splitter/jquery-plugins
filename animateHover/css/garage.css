@@ -1,0 +1,28 @@
+
+.garage_block{
+background:red;
+float:left;
+width:150px;
+height:130px;
+margin-left:20px;
+position:relative;
+overflow:hidden;
+}
+.garage_block div.background{
+background:#555;
+height:110px;
+width:130px;
+padding:10px;
+color:#eee;
+z-index:5;
+}
+.garage_block div.overlay{
+background:#222;
+height:110px;
+width:130px;
+z-index:10;
+position:relative;
+top:-130px;
+padding:10px;
+color:#888;
+}

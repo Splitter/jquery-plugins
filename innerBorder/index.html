@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>SV InnerBorder</title>
+	<script type="text/javascript" src="../index_files/scripts/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../index_files/scripts/jquery.plugins.min.js"></script>
+	<script type="text/javascript" src="./scripts/jquery.svInnerBorder.js"></script>
+	
+	<script type="text/javascript" src="./scripts/sv_initialize.js"></script>
+	<link rel="stylesheet" href="./style.css" />
+	
+</head>
+<body>
+	<div class="header">
+		<h1>
+			<span class="big_text">
+				SV InnerBorder
+			</span>
+			<span class="small_text">
+				A simple inner border plugin
+			</span>
+		</h1>
+	</div>
+	
+
+	
+	<div class="heading">
+		<h2>> Example and Code</h2>
+	</div>
+	<div class="block">
+		<div class="top">	
+			<p>
+			This plugin allows you to easily dynamically add a colored
+			semi-transparent inner border to html elements.
+			</p>
+			<h3>Examples:</h3>
+			
+<p>basic example:</p>
+<ul class="inner_border example1">
+    <li><a href="#"><img src="./images/web1.png" alt="" /></a></li>
+    <li><a href="#"><img src="./images/web2.png" alt="" /></a></li>
+    <li><a href="#"><img src="./images/web3.png" alt="" /></a></li>
+</ul>
+<div class="clear"></div><br/>
+<p>example with call to remove function:(hover mouse over)</p>
+<ul class="inner_border example2">
+    <li><a href="#"><img src="./images/web1.png" alt="" /></a></li>
+    <li><a href="#"><img src="./images/web2.png" alt="" /></a></li>
+    <li><a href="#"><img src="./images/web3.png" alt="" /></a></li>
+</ul>
+<div class="clear"></div><br/>
+<p>example with stacking multiple borders of different colors</p>
+<ul class="inner_border example3">
+    <li><a href="#"><img src="./images/web1.png" alt="" /></a></li>
+    <li><a href="#"><img src="./images/web2.png" alt="" /></a></li>
+    <li><a href="#"><img src="./images/web3.png" alt="" /></a></li>
+</ul>
+<div class="clear"></div>
+			<h3>Usage:</h3><p>
+			To begin you must include both the jQuery file and the plugin file itself.
+			<br/>(usually done in the head of the document).
+			</p>	
+			<br/>
+			<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.svInnerBorder.js&quot;&gt;&lt;/script&gt;</code></pre>
+			<br/><br/>
+			<p>
+			Initializing the script
+			</p>
+			<pre><code>var options = {
+	thickness: 3, //border thickness
+	color: '#ff1467', //color of border
+	opacity: '0.4', //opacity of border
+	replace:false //whether to replace existing innerBorders
+};
+$('.example3 li img').svInnerBorder(options);</code></pre>
+		
+			
+			<br/><br/>
+		<p>
+		thickness is the thickness in pixels of the border.<br/><br/>
+		color is the CSS(hex) color code for the border color.<br/><br/>
+		opacity is the opacity you want border set to.<br/><br/>
+		replace is whether the script should remove old innerborders before
+		adding new, if set to false it will stack the new border ontop of the old. It
+		defaults to true.
+		<br/><br/>
+		</p>
+			
+			
+			
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	
+
+</body>
+</html>

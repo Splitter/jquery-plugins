@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>SV Image Tooltip Plugin</title>
+	<script type="text/javascript" src="../index_files/scripts/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../index_files/scripts/jquery.plugins.min.js"></script>
+	<script type="text/javascript" src="./scripts/jquery.svImageTooltip.min.js"></script>
+	
+	<script type="text/javascript" src="./scripts/sv_initialize.js"></script>
+	<link rel="stylesheet" href="./style.css" />
+	
+</head>
+<body>
+	<div class="header">
+		<h1>
+			<span class="big_text">
+				SV ImageTooltip
+			</span>
+			<span class="small_text">
+				image preview/tooltip plugin
+			</span>
+		</h1>
+	</div>
+	
+
+	
+	<div class="heading">
+		<h2>> image preview/tooltip Plugin</h2>
+	</div>
+	<div class="block">
+		<div class="top">	
+			<p>
+			As you hover over an element with the mouse the script will show an image preview in a tooltip fashion.
+			</p>
+			<h3>Example:</h3>
+			<div class="container">
+				<div class="div_block" rel="./images/1.jpg"></div>
+				<div class="div_block" rel="./images/2.jpg"></div>
+				<div class="div_block" rel="./images/3.jpg"></div>
+				<div class="div_block" rel="./images/4.jpg"></div>
+				<div class="div_block" rel="./images/5.jpg"></div>
+				<div class="div_block" rel="./images/1.jpg"></div>
+				<div class="div_block" rel="./images/2.jpg"></div>
+				<div class="div_block" rel="./images/3.jpg"></div>
+				<div class="div_block" rel="./images/4.jpg"></div>
+				<div class="div_block" rel="./images/5.jpg"></div>
+				<div class="div_block" rel="./images/1.jpg"></div>
+				<div class="div_block" rel="./images/2.jpg"></div>
+				<div class="div_block" rel="./images/3.jpg"></div>
+				<div class="div_block" rel="./images/4.jpg"></div>
+				<div class="div_block" rel="./images/5.jpg"></div>
+				<div class="div_block" rel="./images/1.jpg"></div>
+				<div class="div_block" rel="./images/2.jpg"></div>
+				<div class="div_block" rel="./images/3.jpg"></div>
+				<div class="div_block" rel="./images/4.jpg"></div>
+				<div class="div_block" rel="./images/5.jpg"></div>
+				
+			</div>
+			<div class="clear"></div>
+			<h3>Usage:</h3><p>
+			To begin you must include both the jQuery file and the plugin file itself.
+			<br/>(usually done in the head of the document).
+			</p>	
+			<br/>
+			<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.svImageTooltip.js&quot;&gt;&lt;/script&gt;</code></pre>
+			<br/><br/>
+			<p>
+			the HTML
+			</p>
+			<pre><code>&lt;div rel="./images/5.jpg"&gt;&lt;/div&gt;</code></pre>
+			<p>
+			The image preview/tooltips can be attached to almost any html element, 
+			you just need to set the 'rel' attribute equal to the path of the image
+			you wish to be displayed when the element is hovered over.
+			</p>
+			<br/><br/>
+			<p>
+			Initializing the script
+			</p>
+			<pre><code>var opts = {
+	border: '4px solid #555', //Border around image popup
+	offsetX: 20, //Horizontal offset
+	offsetY: 20 //Vertical offset
+};
+$('YOUR_SELECTOR').svImageTooltip(opts);</code></pre>
+		
+			<br/><br/>
+			<p>
+			border is if you wish to add a colored border around the image preview/tooltip<br/><br/>
+			The offsetX is the horizontal offset from the current mouse position<br/><br/>
+			The offsetY is the the horizontal offset from the current mouse position
+			</p>
+			<br/><br/>
+					
+			<br/><br/>
+					
+					
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	
+
+</body>
+</html>

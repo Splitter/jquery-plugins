@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>SV Fade Highlight Plugin</title>
+	<script type="text/javascript" src="../index_files/scripts/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../index_files/scripts/jquery.plugins.min.js"></script>
+	<script type="text/javascript" src="./scripts/jquery.svFadeHighlight.min.js"></script>
+	
+	<script type="text/javascript" src="./scripts/sv_initialize.js"></script>
+	<link rel="stylesheet" href="./style.css" />
+	
+</head>
+<body>
+	<div class="header">
+		<h1>
+			<span class="big_text">
+				SV FadeHighlight
+			</span>
+			<span class="small_text">
+				fade highlighting plugin
+			</span>
+		</h1>
+	</div>
+	
+
+	
+	<div class="heading">
+		<h2>> Fade Highlighting Plugin</h2>
+	</div>
+	<div class="block">
+		<div class="top">	
+			<p>
+			Hover the mouse over one element and other similar elements fade out to provide a 'highlight' effect.
+			A very useful plugin for galleries as well as portfolio pages.
+			</p>
+			<h3>Example:</h3>
+			<div class="div_block">
+			</div>
+			<div class="div_block">
+			</div>
+			<div class="div_block">
+			</div>
+			<div class="clear"></div>
+			<h3>Usage:</h3><p>
+			To begin you must include both the jQuery file and the plugin file itself.
+			<br/>(usually done in the head of the document).
+			</p>	
+			<br/>
+			<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.svFadeHighlight.js&quot;&gt;&lt;/script&gt;</code></pre>
+			<br/><br/>
+			<p>
+			Initializing the script
+			</p>
+			<pre><code>var options = {
+   opacity: 0.4, //Opacity to fade other elements out to
+   speed:600, //Speed for fade animation
+   selector: '' //OPTIONAL Selector - defaults to select similar elements
+};
+$('YOUR SELECTOR').svFadeHighlight(options);</code></pre>
+		
+			
+			<br/><br/>
+		<p>
+		opacity is the opacity you want to fade the other elements to.<br/><br/>
+		speed is the duration for the fade animation<br/><br/>
+		selector is an optional paramater. To explain better I will explain how the 
+		script functions by default. The example above is initialized like this:
+		<br/><br/>
+		</p>
+		<pre><code>
+$('div.div_block').sv_highlight(options);</code></pre>
+		<p><br/><br/>
+		'div.div_block' is the selector that points to the three blocks above. By default
+		the script will fade out all other elements matched by that selector not including
+		the one currently being hovered over. You can pass in a custom selector and the script
+		will fade out elements that match that selector you pass in instead of the other elements
+		that match the original selector.
+		
+		</p>
+		
+		
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	
+
+</body>
+</html>

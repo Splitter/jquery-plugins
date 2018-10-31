@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		
+		<title></title>
+		<link rel="stylesheet" media="all" href="./default.css"/>
+   <!-- <link rel="stylesheet" href="uniform.agent.css" type="text/css" media="screen">-->
+		<!-- jQuery library & third party jQuery plugins -->
+   		<script src="./jQuery.js"></script>
+   		<!-- sv designed plugins and scripts -->
+   		<script src="./form.js"></script>
+		
+		
+		 <style type="text/css" media="screen">
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #666;
+        padding: 40px;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        margin-bottom: 20px;
+        clear: both;
+      }
+      label {
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 3px;
+        clear: both;
+      }
+    </style>
+   		<!-- theme specific code -->
+   		<script>
+
+
+		$(document).ready(function() {
+			$('input[type=checkbox], input[type=radio], input[type=file], select').toolbox('form');
+
+		});
+	
+   		</script>
+
+	</head>
+	<body>
+    <h1>Uniform Demo</h1>
+    <form>
+      <ul>
+        <li><label>Message:</label><textarea cols="40" rows="5"></textarea></li>
+        <li><label>Your Name:</label><input type="text" size="40"/></li>
+        <li><label>Your Email:</label><input type="email" size="40"/></li>
+        <li>
+          <label>I found your site:</label>
+          <select>
+            <option>Through Google</option>
+            <option selected="selected">Through Twitter</option>
+            <option>Other&hellip;</option>
+            <option>&lt;Hi&gt;</option>
+          </select>
+        </li>
+        <li>
+          <label><input type="radio" name="radio" /> Saying hi</label>
+          <label><input type="radio" name="radio" checked="checked" /> Sending feedback</label>
+          <label><input type="radio" name="radio" disabled="disabled"/> Sending feedback</label>
+        </li>
+        <li>
+          <label><input type="checkbox"  name="checkbox1" checked="checked" value="1" /> Please contact me back</label>
+          <label><input type="checkbox"  name="checkbox1" value="2"/> Please contact me back</label>
+          <label><input type="checkbox"  name="checkbox1" value="3" disabled="disabled" /> Please contact me back</label>
+        </li>
+        <li>
+          <label>Upload a file:</label>
+          <input type="file" />
+        </li>
+        <li>
+          <input type="submit" />
+          <input type="reset" />
+        </li>
+      </ul>
+    </form>
+	</body>
+</html>
+
+

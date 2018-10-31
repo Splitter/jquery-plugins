@@ -1,0 +1,16 @@
+.link_nudge ul{
+list-style:arrow;
+}
+.link_nudge li{
+padding:5px;
+margin:0px;
+width:120px;
+}
+.link_nudge li a:link,.link_nudge li a:visited{
+color:#777;
+text-decoration:none;
+}
+.link_nudge li a:hover{
+color:#111;
+}
+

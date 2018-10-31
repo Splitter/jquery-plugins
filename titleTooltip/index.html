@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>SV Title Tooltip</title>
+	<script type="text/javascript" src="../index_files/scripts/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../index_files/scripts/jquery.plugins.min.js"></script>
+	<script type="text/javascript" src="./scripts/jquery.svTitleTooltip.min.js"></script>
+	
+	<script type="text/javascript" src="./scripts/sv_initialize.js"></script>
+	<link rel="stylesheet" href="./style.css" />
+	<link rel="stylesheet" href="./svtooltip.css" />
+	
+</head>
+<body>
+	<div class="header">
+		<h1>
+			<span class="big_text">
+				SV TitleTooltip
+			</span>
+			<span class="small_text">
+				simple little title tooltip plugin
+			</span>
+		</h1>
+	</div>
+	
+
+	
+	<div class="heading">
+		<h2>> title tooltip Plugin</h2>
+	</div>
+	<div class="block">
+		<div class="top">	
+			<p class="description">
+			As you hover over an element with the mouse the script will 
+			display the title of the element in a tooltip balloon.<br/>
+			<br/>note: the script comes with a light and dark css style(uses no images), both of which can be displayed above
+			or below the element that is recieving the tooltip.
+			</p>
+			<h3>Example:</h3>
+			<p class="example_paragraph">
+			"Lorem ipsum dolor <span class="tooltip_lighttop" title="The first Title">sit amet</span>, consectetur adipisicing elit,
+			sed do eiusmod <span class="tooltip_darktop" title="And one more title tooltip">tempor</span> ut labore et dolore magna aliqua.
+			Ut enim ad minim veniam, quis nostrud exercitation ullamco <span  class="tooltip_lightbottom" title="Yet another title tooltip">laboris</span> 
+			nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <span class="tooltip_darktop" title="Its really a title tooltip">reprehenderit</span> 
+			in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+			culpa qui <span class="tooltip_darkbottom" title="And one last title tooltip">officia</span> deserunt mollit anim id est laborum
+			</p>
+			<div class="clear"></div>
+			<h3>Usage:</h3><p>
+			To begin you must include both the jQuery file, the plugin file itself and the accompanying stylesheet provided.
+			<br/>(usually done in the head of the document).
+			</p>	
+			<br/>
+			<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.svTitleTooltip.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;./svtooltip.css&quot; /&gt;</code></pre>
+			<br/><br/>
+			<p>
+			the HTML
+			</p><br/><br/>
+			
+			<pre><code>&lt;span class="tooltip_lighttop" title="This is our tooltip text~!"&gt;Some random text&lt;/span&gt;</code></pre>
+			<p>
+			or
+			</p>
+			<pre><code>&lt;span class="tooltip_darkttop" title="This is our tooltip text~!"&gt;Some random text&lt;/span&gt;</code></pre>
+			<p>
+			or
+			</p>
+			<pre><code>&lt;span class="tooltip_lightbottom" title="This is our tooltip text~!"&gt;Some random text&lt;/span&gt;</code></pre>
+			<p>
+			or
+			</p>
+			<pre><code>&lt;span class="tooltip_darkbottom" title="This is our tooltip text~!"&gt;Some random text&lt;/span&gt;</code></pre>
+			<br/><br/>
+			<p>
+			Adding the 'tooltip_lighttop' CSS class to an element will present the tooltip
+			with the light theme and it will show above the element, and a class of 'tooltip_darkbottom' will
+			present the tooltip with the dark theme and it will show below. The other two classes follow the
+			same thought process.
+			<br/><br/>
+			This script is different then the others presented with this pack
+			as it gets pre-initialized when it is included, adding the title and appropriate 
+			css class to an element is all that needs to be done for the script to be functional after
+			including it.
+			</p>
+			
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+
+@font-face {
+font-family: 'fonts/AurulentSansRegular';
+src: url('fonts/AurulentSans-Regular-webfont.eot');
+src: local('?'), url('fonts/AurulentSans-Regular-webfont.woff') format('woff'), url('fonts/AurulentSans-Regular-webfont.ttf') format('truetype'), url('fonts/AurulentSans-Regular-webfont.svg#webfont8XBZZzyb') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+
+.slideshow_wrap{
+height:252px;
+width:602px;
+margin:0px auto 0px auto;
+padding:0px;
+position:relative;
+text-align:left;
+overflow:hidden !important;
+border:1px solid #111;
+}	
+.slideshow_shadow{
+height:275px;
+width:600px;
+margin:30px auto 0px auto;
+padding:0px;
+position:relative;
+text-align:left;
+background:url(../images/bottom_slide.png) bottom center no-repeat;
+}	
+
+.container{	
+list-style: none;
+margin: 0;
+padding: 0;
+text-align:left;
+padding:0px;
+background:#000;
+position:relative;
+height:250px;
+width:600px;
+display:block;
+overflow:hidden !important;
+border:1px solid #555;
+}
+.container li{
+padding:0px;
+margin:0px;
+height:250px;
+width:600px;
+position:relative;
+overflow:hidden !important;
+}
+
+.second_controls {
+left:20px;
+top:-240px;
+width:300px;
+position:relative;
+z-index:3;
+list-style:none;
+margin:0;
+padding:0;
+}
+.second_controls  li.control{
+float:left;
+margin:0px 20px 0px 0px;
+border:1px solid #5c5c5c;
+background:#fff;
+width:20px;
+height:10px;
+cursor:pointer;	
+position:relative;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+opacity: .4;
+}
+.second_controls  li.active{
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+opacity: 1.0;
+}
+
+
+
+
+.slide{
+height:250px;
+width:600px;
+}
+.slide1{
+background:url('../images/slide2.png') top left;
+padding-top:45px;
+}
+.slide2{
+background:url('../images/slide1.png') top left;
+}
+.slide3{
+background:url('../images/slide3.png') top left;
+padding-top:45px;
+}
+.slide4{
+background:url('../images/slide4.png') top left;
+}
+span.slidetext{
+display:block;
+width:320px;
+height:35px;
+background:#222;
+color:#ddd;
+font:15px 'AurulentSansRegular', Arial, 'Liberation Sans', FreeSans, sans-serif;
+line-height:35px;
+letter-spacing:2px;
+margin-left:20px;
+padding:10px 20px;
+}
+span.floatright{
+float:right;
+width:400px;
+margin-top:30px;
+font:18px 'AurulentSansRegular', Arial, 'Liberation Sans', FreeSans, sans-serif;
+line-height:35px;
+}
+span.hide{
+background:none;
+}

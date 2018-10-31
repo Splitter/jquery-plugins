@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>SV UltimateSlider Script</title>
+	<script type="text/javascript" src="./scripts/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./scripts/jquery.svUltimateSlider.js"></script>
+	<script type="text/javascript" src="./scripts/jquery.svUltimateSlider.transitions.js"></script>
+	<script type="text/javascript" src="./scripts/page1.js"></script>
+	
+	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./css/page1.css" />
+	
+	<script>
+	</script>
+</head>
+<body>
+	<div class="header">
+		<h1>
+			<span class="big_text">
+				SV UltimateSlider
+			</span>
+			<span class="small_text">
+				jquery slider/slideshow plugin
+			</span>
+		</h1>
+	</div>
+<div class='nav'>
+	<ul>
+		<li>
+			<a href="index.html">home</a>
+		</li>
+		<li>
+			<a href="#top">documentation</a>
+		</li>
+		<li>
+			<a href="page2.html">examples #2</a>
+		</li>
+		<li>
+			<a href="page3.html">examples #3</a>
+		</li>
+		<li>
+			<a href="page4.html">examples #4</a>
+		</li>
+	</ul>
+		
+</div>
+
+<div class='slideshow_shadow'>
+<div class='slideshow_wrap'>
+		<ul class='container first_example'>
+			<li >
+				<div class="slide slide1">
+					<span class='slidetext'>
+						These spans are html content
+					</span>
+					<span class='slidetext floatright'>
+						The slides hold any html content
+					</span>
+				</div>
+			</li>
+			<li >
+				<div class="slide slide2">
+					<span class='slidetext hide'>
+					</span>
+					<span class='slidetext floatright'>
+						There are 30 transitions!
+					</span>
+				</div>
+			</li>
+			<li >
+				<div class="slide slide3">
+					<span class='slidetext'>
+						Use easing for added effect
+					</span>
+					<span class='slidetext floatright'>
+						Create your own transitions!
+					</span>
+				</div>
+			</li>
+			<li >
+				<div class="slide slide4">
+					<span class='slidetext hide'>
+					</span>
+					<span class='slidetext floatright'>
+						Just 4kb minified!(7kb w / transitions)
+					</span>
+				</div>
+			</li>
+		</ul>
+		<ul class="controls first_example">
+			<li class="control active"></li>
+			<li class="control"></li>
+			<li class="control"></li>
+			<li class="control"></li>
+		</ul>
+		<div class="prev">prev</div>
+		<div class="next">next</div>
+</div>
+
+</div>
+	<div class="heading">
+		<h2>> jquery slider/slideshow plugin</h2>
+	</div>
+	<div class="block">
+		<div class="top">	
+			<p>
+			svUltimateSlider is a jQuery plugin meant to make it easy for users to create
+			some amazing content sliders/slideshows. The focus during the creation of this
+			plugin was allowing users to easily control/define transitions.
+			</p><br/>
+			<h3>Features:</h3>
+			<p>
+			<ul>
+				<li>Slides support any html content(not just images)</li>
+				<li>Incredibly small at just 4kb minified(7kb with included transitions)</li>
+				<li>30 included transitions to look through and play with</li>
+				<li>Create custom transitions easily!</li>
+				<li>Full control over controls(create your own look & feel) </li>
+				<li>Autoplay as well as AutoPause on hover</li>
+				<li>Onend/Onstart callback functions</li>
+			</ul>
+			</p>
+			<a name='top'></a>
+			<br/>
+			<h1>Documentation:</h1>
+			<p>(please read the documentation thoroughly before contacting me for support)
+			</p>
+			<ul>
+				<li>
+					<a href="#csshtml">The Html &amp; CSS</a>
+				</li>
+				<li>
+					<a href="#how">How It Works</a>
+				</li>
+				<li>
+					<a href="#code">Using The Plugin</a>
+				</li>
+				<li>
+					<a href="#trans">Transitions Explained</a>
+				</li>
+				<li>
+					<a href="#trans2">Creating And Adding Transitions</a>
+				</li>
+				<li>
+					<a href="#list">The Premade Transitions</a>
+				</li>
+			</ul><br/><br/>
+			<a name='csshtml'></a>
+			<h2>The HTML &amp; CSS<a href="#top">top^</a></h2>
+			<p>
+			The markup is very simple, the slides themselves are just list items. They can
+			contain any html markup you wish them to have.
+			<p>			
+			<pre><code>&lt;ul class='slider'&gt;
+	&lt;li&gt;Slide one content&lt;/li&gt;
+	&lt;li&gt;Slide two content&lt;/li&gt;
+	&lt;li&gt;Slide three content&lt;/li&gt;
+	&lt;li&gt;Slide four content&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+			<p>The CSS is just as simple, give the ul and list elements all the same width/height and set the
+			overflow to hidden for each.
+			</p>
+			<pre><code>ul.slider{	
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height:250px;
+	width:600px;
+	display:block;
+	position:relative;
+	overflow:hidden;
+}
+ul.slider li{
+	display:block;
+	padding:0;
+	margin:0;
+	height:250px;
+	width:600px;
+	position:relative;
+	overflow:hidden;
+}</code></pre>
+<p> And that is all the setup you need before initializing and using
+the script. 
+<br/><br/>
+There are a few things you should note about the slides markup before diving in though. 
+<br/><br/>
+You CANNOT explicitly set the 'position' attribute of any element contained within a slide if you are using a 
+transition that animates opacity. IE will animate the opacity of the parent 
+slide but leave these child elements with full opacity. That means no 'position:relative', 
+'position:absolute' or etc on elements contained within a slide. It is much easier to use padding
+and margin to position child elements.<br/><br/>
+The script works by basically creating a copy of the slides and breaking
+the copy down into the grids that get animated. So that means you CANNOT base
+the styling of a slide on styling the 'li' element itself, no classes or ids specific to
+those 'li' elements. If you want to style is such a fashion, add a div with the li and style the div.
+This also means that when you style child elements of the slide your CSS selectors should NOT be
+defined by the parent 'li' element. For example, 'ul.slideshow li span.text' would not work, but just 'span.text' would.
+</p><br/><br/>
+<a name='how'></a>
+<h2>How It Works<a href="#top">top^</a></h2>
+			
+<p>
+Each slide(list item) is stacked on top of each other, with the current slide being on top.
+</p>
+<img src="./images/stacks.png" alt=""/>
+<p>When a transition takes place, a slide is basically broken down into a grid based on 
+the specified rows and columns(the image below simulates how a transition with 8 columns and 3 rows would be broken down).</p>
+
+<img src="./images/grids.png" alt=""/>
+<p>The blocks(or rows or columns) are then animated to 
+either reveal the slide below or to form the next slide in the slideshow.</p>
+
+<img src="./images/animated.png" alt=""/>
+<p>
+So basically different transitions are created by specifying a different amount
+of rows and columns to break the slide down into as well as animate different CSS attributes
+of the blocks(or rows or columns). Only 5 css attributes of the blocks(or rows or columns) are meant to be animated to create 
+the transitions;'top','left','width','height' or 'opacity'. For example, the transition simulated in the image above breaks
+down the slide into 8 columns, 3 rows. And it animates the CSS attributes 'left', 'top' and 'opacity'
+of the blocks created by the grid.
+
+</p>
+<h3>NOTE:</h3><p> It is extremely important that you understand that only those 5 css attributes are meant
+to be animated in order to create the transitions</p>
+<br/><p>
+Now on to actually using the plugin...
+<p>
+<br/><br/>
+<a name='code'></a>
+<h2>Using the Plugin<a href="#top">top^</a></h2>
+		
+<p>
+To use the script you must first include jQuery, the plugin and
+optionally one or more of the transition files(if you plan on using these).
+<p>
+
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;svUltimateSlider.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;transitions.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+<p>
+To use, select the 'ul' element of the slider/slideshow markup and
+call the 'svUltimateSlider' method passing in an options object containing
+the parameters to configure the slider.
+</p> 
+<pre><code>var options = {
+	delay: 3000, //Delay between transitions
+	next:'#next', //OPTIONAL selector for next button
+	prev:'#previous',//OPTIONAL selector for previous button
+	controls:'.controls',//OPTIONAL selector for list of controls
+	type:'fade',//The transition or transitions
+	onend:null, //OPTIONAL onend callback function
+	onstart:null//OPTIONAL onstart callback function
+};
+$('ul.slider').svUltimateSlider(options);</code></pre>
+<p>
+'delay' is how long to show a slide before transitioning to the next.
+<br/><br/>
+'next' is a selector for an element that when clicked will cause the slideshow to transition
+to the next slide(can pretty much be any type of html element).
+<br/><br/>
+'prev' is a selector for an element that when clicked will cause the slideshow to transition
+to the previous slide(can pretty much be any type of html element).
+<br/><br/>
+'controls' is a selector for an undordered list. The number of elements in the unordered list
+must coincide with the number of slides present in the slideshow. The index number of the 'li' list item
+in the list that coresponds to the current slide being viewed will have an 'active' class applied to it.
+This is to allow you to style the control of the active slide to set it apart from the rest.
+<br/><br/>
+'type' is the type of transition or transitions(by name). It can either be a single string specifying
+the name of a single type of transition or an array of names of transition types to be cycled through. By default
+the script itself only includes a 'fade' transition(all other transitions included in the extra file are
+named later in this document).
+<br/><br/>
+'onend' and 'onstart' are callback functions that will be called before and after the transition animations take place.
+They recieve the index number to the current and next slides as arguments.
+
+</p>	
+	
+<br/><br/>
+<a name='trans'></a>
+<h2>Transitions Explained<a href="#top">top^</a></h2>
+			
+<p>
+The transitions are they themselves objects and are held in
+the 'transitions' object of the script.
+
+</p>	
+<pre><code>fade = {
+		duration:800,
+		delay:0,
+		css:{opacity:0},
+		columns:1,
+		rows:1,
+		order:'normal',
+		easing:'linear',
+		slide:'current'
+	}</code></pre>		
+<p>
+Each transition object holds 8 properties that define the
+transition(remember the images/description above).
+</p>
+<p>
+'duration' is how long each block(or column or row) is animated.
+<br/><br/>
+'delay' is the time between when one block(or column or row) starts animating and the next block(or column or row) starts animating.
+<br/><br/>
+'css' is an object of css properties passed directly to jQueries 'animate' method
+for each block(or row or column). IF you are animating the 'current' slide to create
+the transition then this object is meant to hold the value to which the blocks will be animated
+to. IF you are animating the 'next' slide, this object will be applied to the blocks BEFORE they are
+animated to their final position. Please see the <a href='http://api.jquery.com/animate/'>'animate'</a> documentation about how to form these parameters. Also, as previously
+mentioned, only 5 css attributes of the blocks(or rows or columns) are meant to be animated to create 
+the transitions; 'top','left','width','height' or 'opacity'
+<br/><br/>
+'columns' is the number of columns to break the slide down into
+<br/><br/>
+'rows' is the number of rows to break the slide down into
+<br/><br/>
+'order' is the order the blocks are animated in, either 'normal', 'reverse' or 'random'. Normal will animate the rows/columns/blocks from left to right and top to bottom. Reverse will animate them from right to left and bottom to top. Random will randomly
+choose blocks/rows/columns to animate.
+<br/><br/>
+'easing' is an optional easing function to pass to the animate method if you are using the <a href='http://gsgd.co.uk/sandbox/jquery/easing/'>easing</a> plugin.
+Just adding an easing function to a transition can give it a completely different effect. jQuery ships with two easing options by default 'swing' and 'linear', this script will default to 'swing' for all transitions if the easing plugin is not
+available.
+<br/><br/>
+'slide' tells the script whether you want to break down and animate either the current slide or the next slide to create the transition. Can either be 'current' or 'next'.
+</p>
+<p><strong>NOTE:</strong>
+The script is setup to default to values set in the 'fade' animation above if a property is missed or not included in
+the transition being called. It is also set to fallback to the fade transition as a whole if the transition wanted does not exist.
+</p>	
+			
+<br/><br/>
+<a name='trans2'></a>
+<h2>Creating and Adding Transitions<a href="#top">top^</a></h2>
+	
+<p>
+There are two ways to create and add transitions to the script.<br/><br/>
+The first way we will cover is using the 'extend' method of jQuery
+ to extend the existing transitions object.
+
+<p>	
+<pre><code>jQuery.extend(jQuery.svUltimateSlider.transitions,
+{			
+	transitionName:{
+	//transition properties
+	}
+});</code></pre>
+<p>So suppose we wanted to re-create the animation simulated in the image
+earlier in this document we would define our transition like so...
+</p>
+
+<pre><code>jQuery.extend(jQuery.svUltimateSlider.transitions,
+{			
+	ExampleTransition:{
+		speed:3000,
+		css:{opacity:0,top:'-=100',left:'-=200'},
+		columns:8,
+		rows:3,
+		factor:3,
+		order:'normal',
+		easing:'swing'
+	}
+});</code></pre>
+<p>Now if we wanted to use this new transition along with the fade transition we 
+would pass an array containing the names to the script as we initialize it.
+</p>
+
+
+<pre><code>var options = {
+	delay: 3400,
+	type:['ExampleTransition','fade']
+};
+$('ul.slider').svUltimateSlider(options);</code></pre>
+<br/><br/>
+<p>
+The second way is to actually pass in the definition of the transition as part
+of the options you initialize the script with. So again using the example above.
+</p><br/><pre><code>var options = {
+	delay: 3400,
+	type:['ExampleTransition','fade'],
+	transitions:{			
+		ExampleTransition:{
+			speed:3000,
+			css:{opacity:0,top:'-=100',left:'-=200'},
+			columns:8,
+			rows:3,
+			factor:3,
+			order:'normal',
+			easing:'swing'
+		}
+	}
+};
+$('ul.slider').svUltimateSlider(options);</code></pre>
+<br/>
+<p>
+The second way is great for defining a single or a couple transitions while
+the first method is great for defining many transitions.
+
+</p><br/><br/><br/>
+			<a name='list'></a>
+			<h2>The Premade Transitions<a href="#top">top^</a></h2>
+			
+<p>As mentioned earlier, the 'fade' transition is included with the script
+by default. The 29 transitions listed below are defined in the extra files of transitions 
+and can be edited to suit your needs.
+<ul>
+	<li>blockfade</li>
+	<li>blockfadein</li>
+	<li>blockshrink</li>
+	<li>blockgrow</li>
+	<li>blockdrop</li>
+	<li>blockdropin</li>
+	<li>blockflyout</li>
+	<li>blockrandom</li>
+	<li>blockrandomin</li>
+	<li>rowfade</li>
+	<li>rowheightin</li>
+	<li>rowthin</li>
+	<li>rowgrowin</li>
+	<li>rowslideleft</li>
+	<li>rowslideright</li>
+	<li>rowrandom</li>
+	<li>rowrandomin</li>
+	<li>columnfade</li>
+	<li>columnthin</li>
+	<li>columndropin</li>
+	<li>columndrop</li>
+	<li>columnflyin</li>
+	<li>columnflyout</li>
+	<li>columnrandom</li>
+	<li>columnrandomin</li>
+	<li>top</li>
+	<li>bottom</li>
+	<li>left</li>
+	<li>right</li>
+</ul>
+		
+		
+		
+		
+		
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	
+
+</body>
+</html>

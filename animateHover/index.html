@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>SV Hover Animate Plugin</title>
+	<script type="text/javascript" src="../index_files/scripts/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../index_files/scripts/jquery.plugins.min.js"></script>
+	<script type="text/javascript" src="./scripts/jquery.svAnimateHover.min.js"></script>
+	
+	<script type="text/javascript" src="./scripts/sv_initialize.js"></script>
+	
+	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./css/link_nudge.css" />
+	<link rel="stylesheet" href="./css/garage.css" />
+	<link rel="stylesheet" href="./css/sliding_overlay.css" />
+	<link rel="stylesheet" href="./css/thumbnail_expand.css" />
+	<link rel="stylesheet" href="./css/sliding_content_overlay.css" />
+	<link rel="stylesheet" href="./css/fade_menu.css" />
+
+</head>
+<body>
+	<div class="header">
+		<h1>
+			<span class="big_text">
+				SV AnimateHover
+			</span>
+			<span class="small_text">
+				the universal hover animation plugin
+			</span>
+		</h1>
+	</div>
+	<div class="heading">
+		<h2>> What is svAnimateHover?</h2>
+	</div>
+	<div class="block">
+		<div class="top overlay">	
+			<p>
+				Lets face it the majority of hover animation effects
+				take place by animating a specific(or set of specific) 
+				CSS attributes from one position to another set position as
+				the mouse hovers over an element and then animate the same 
+				attribute('s) back to the(their) original positions as 
+				the mouse leaves the element.<br/><br/>
+				This leaves a developer(thats using jQuery) to either create 
+				a similar block of code for each hover animation or use a plugin
+				for each type of hover effect(which consist of similar code bases).<br/><br/>
+				svAnimateHover is a universal hover animation plugin meant to reduce the
+				size of the code used, be it the amount of plugins needed or custom
+				code created, to implement hover effects.<br/><br/>
+				Many examples are displayed lower in the page.
+			</p>	
+			
+		</div>		
+		<div class="bottom"></div>	
+	</div>
+	
+	<div class="heading">
+		<h2>> What svAnimateHover is NOT</h2>
+	</div>
+	<div class="block">
+		<div class="top overlay">	
+			<p>
+			svAnimate hover is NOT a plugin to create a specific effect. It is
+			NOT a plug and play effect to add to your website. It IS meant for
+			someone with a working html/css/javascript knowledge set who wants
+			to simplify his code base with a simple versatile plugin.
+			</p>	
+			
+		</div>		
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	<div class="heading">
+		<h2>> Usage</h2>
+	</div>
+	<div class="block">
+		<div class="top overlay">	
+			<p>
+			To begin you must include both the jQuery file and the plugin file itself.
+			<br/>(usually done in the head of the document).
+			</p>	
+			<br/>
+			<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.sv_animateHover.js&quot;&gt;&lt;/script&gt;</code></pre>
+			<p>
+			Or with the easing plugin if you wish(optional)
+			</p>
+			<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.easing.1.3.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.sv_animateHover.js&quot;&gt;&lt;/script&gt;</code></pre>
+			<br/><br/><p> To actually use the script just call svAnimateHover on the objects
+			you wish to effect. The script takes an options object as a parameter and there are 5 options the script
+			takes.
+			</p><br/>
+
+
+<pre><code>
+var options={
+	changes:{},//Object containing CSS changes to make
+	speed:300, //Speed of the animation
+	selector:'',//OPTIONAL selector for child of element being hovered over
+	easing:'easeInBack', //OPTIONAL easing function
+	onstart:function(){},//OPTIONAL on start callback function
+	onend:function(){}//OPTIONAL on end callback function
+	};
+$('YOUR_SELECTOR').svAnimateHover(optionss);
+
+</code></pre>
+<p>The changes object will take the position to animate the attribute to.
+So for example if you wanted to move the 'margin-left' of an element by
+15px and it already has a 'margin-left' of 5px set, you would pass 20px(15 you want to add + the 5 it has)
+ to the script.<br/><br/>
+ The speed is the duration of the animation.<br/><br/>
+ The easing is an optional easing function(if
+ you are using the jquery easing plugin).<br/><br/> 
+ The selector option is for times you wish to animate a child element when the parent is hovered over(see examples below)<br/><br/>
+The last two options are optional callback functions. The onstart callback function gets executed as the 
+ users mouse hovers over an element, and the onend is executed as the animations finish after the mouse leaves
+ an element. They are called in scope of the objects being hovered over so the 'this' variable within the functions
+ will refer to the actual element being hovered over.
+
+</p>
+		</div>		
+		<div class="bottom"></div>	
+	</div>
+	
+	<div class="heading">
+		<h2>> Link Nudging Example</h2>
+	</div>
+	<div class="block">
+		<div class="top link_nudge">	
+			<h3>Example:</h3>
+				<ul>
+					<li><a href="#"> The First Item</a></li>
+					<li><a href="#"> Another one Here</a></li>
+					<li><a href="#"> Yet One more LI</a></li>
+					<li><a href="#"> And Here's One Last</a></li>
+				</ul>	
+			<h3>The Code:</h3>
+			
+			<pre><code>var opts={
+		changes:{'margin-left':'15px'},
+		speed:400
+	};
+$('div.link_nudge > ul > li').svAnimateHover(opts);</code></pre>
+	
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	<div class="heading">
+		<h2>> Garage Door Example</h2>
+	</div>
+	<div class="block">
+		<div class="top">	
+			<p>This example uses a child selector to animate a child element when the parent is hovered over. It
+			also passes in an optional easing type.</p>
+			<h3>Example:</h3>
+			<div class="garage_block">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="garage_block">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="garage_block">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="clear"></div>
+			<h3>The Code:</h3>
+				<pre><code>var opts={
+	changes	:	{'top':'-130px'},
+	selector:		'div.overlay',
+	easing:		'easeInBack',
+	speed	:	400
+};
+$('div.garage_block').svAnimateHover(opts);</code></pre>
+			
+			
+			
+			
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	
+	<div class="heading">
+		<h2>> Sliding Overlay Example</h2>
+	</div>
+	<div class="block">
+		<div class="top overlay">	
+			<p>
+				This example animates multiple css attributes, makes use
+				of the child selector and uses the optional easing type.
+			</p>
+			<h3>Example:</h3>
+			
+			<div class="div_overlay">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="div_overlay">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="div_overlay">
+				<div class="background">
+					This is the background
+				</div>
+				<div class="overlay">
+					This is the Overlay
+				</div>
+			</div>
+			<div class="clear"></div>
+			<h3>The Code:</h3>
+				<pre><code>var opts={
+		changes:		{'top':'-80px','height':'40px'},
+		selector:		'div.overlay',
+		easing:		'easeOutBack',
+		speed:		400
+	};
+$('div.div_overlay').svAnimateHover(opts);</code></pre>		
+			
+			
+		</div>
+		
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	
+	<div class="heading">
+		<h2>> Drop Down Menu Example</h2>
+	</div>
+	<div class="block">
+		<div class="top overlay">	
+			<p>
+			This example makes use of the onstart and onend callback functions.
+			
+			</p>
+			<h3>Example:</h3>
+			
+			<p>This example is based on an unedited css dropdown menu downloaded from 
+			<a href="http://www.cssmenumaker.com/builder/menu_info.php?menu=055">cssmenumaker.com</a>
+			<br/><br/></p>
+			<p>
+			License doesn't allow for the file to be included, but if downloaded from cssmenumaker link above,
+			the code below will work flawlessly with the downloaded menu. And if CSS dropdown is created in a similar
+			fashion the code will be pretty much the same.
+			</p>
+			
+			
+			
+			<div class="clear"></div>
+			<h3>The Code:</h3>
+						<pre><code>var opts={
+		changes: {'opacity':1},
+		selector:'ul',
+		speed:	 700,
+		onstart:function(){
+				$(this).children('ul')
+					.css({'display':'block'});
+		},
+		onend:	function(){
+				$(this).children('ul')
+					.css({'display':'none'});
+		}
+	};
+$('.menu > ul > li').each(function(){	
+	$(this).children('ul').css({ opacity: 0 });
+	$(this).svAnimateHover(opts);
+});
+	</code></pre>		
+			
+			
+		</div>
+		
+		<div class="bottom"></div>	
+	</div>
+	
+	
+		
+	<div class="heading">
+		<h2>> More Sliding Content/Overlay Examples</h2>
+	</div>
+	<div class="block">
+		<div class="top overlay">	
+			<p>
+				These Examples make use of chaining to animate multiple child elements at the same time.
+			</p>	<br/>
+			<h3>Example:</h3>
+			
+				<div class="moving_content">
+					<div class="background">
+						<img src="./images/thumb7.jpg" alt="" />
+					</div>
+					<div class="overlay">
+						This is the Overlay
+					</div>
+				</div>
+				
+				<div class="moving_content3">
+					<div class="background">
+						<img src="./images/thumb8.jpg" alt="" />
+					</div>
+					<div class="overlay">
+						This is the Overlay
+					</div>
+				</div>
+			<div class="clear"></div><br/><br/>
+
+				<div class="moving_content2">
+					<div class="background">
+						<img src="./images/thumb7.jpg" alt="" />
+					</div>
+					<div class="overlay">
+						This is the Overlay
+					</div>
+				</div>
+				<div class="moving_content4">
+					<div class="background">
+						<img src="./images/thumb8.jpg" alt="" />
+					</div>
+					<div class="overlay">
+						This is the Overlay
+					</div>
+				</div>	
+			<div class="clear"></div>
+			
+			<h3>The Code:</h3>
+			<p>(all boxes use a variation of the code below with the 'changes' option slightly altered)</p>
+				<pre><code>var opts={
+		changes:{'top':'-40px','opacity':'1'},
+		selector:'div.overlay',
+		speed:400
+	};
+var opts2={
+		changes:{'top':'20px'},
+		selector:'img',
+		speed:400
+	};
+$('.moving_content').find('div.overlay').css({'opacity':0});		
+$('.moving_content').svAnimateHover(opts).svAnimateHover(opts2);</code></pre>		
+			
+
+				
+		</div>		
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	<div class="heading">
+		<h2>> Fading Menu Example</h2>
+	</div>
+	<div class="block">
+		<div class="top">	
+			<p>
+			jQuery powered example of the fade menu from my <a href="http://codecanyon.net/item/sv-animated-menu-pack-2/92569">sv menu pack 2</a> 
+			</p>
+			<h3>Example:</h3>	
+			<div id="fade_menu" > 
+				<ul > 
+					<li class="home"> 
+						<a href="#1">Home</a> 
+					</li> 
+					<li class="about"> 
+						<a href="#2">About</a> 
+					</li> 
+					<li class="portfolio"> 
+						<a href="#3">Portfolio</a> 
+					</li> 
+					<li class="contact"> 
+						<a href="#4">Contact</a> 
+					</li> 
+				</ul> 
+			</div> 			
+				
+			<h3>The Code:</h3>
+			
+			<pre><code>$('div#fade_menu a').each(function(){
+	$(this).clone().insertAfter($(this))
+		.css({
+			top:"-"+$(this).height()+"px",
+			position:'relative',
+			backgroundPosition:"0 -"+$(this).height()+"px",
+			opacity:'0'
+		 });
+});
+var opts={
+		changes:{'opacity':'1'},
+		selector:'a:eq(1)',
+		speed:400
+	};
+$('div#fade_menu li').svAnimateHover(opts)</code></pre>
+	
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	<div class="heading">
+		<h2>> Thumbnail Expanding Example</h2>
+	</div>
+	<div class="block">
+		<div class="top">	
+			<p>
+			This is a slightly altered version of the effect presented in <a href="http://www.sohtanaka.com/web-design/fancy-thumbnail-hover-effect-w-jquery/">this tutorial</a>.(Just a pretty cool effect)
+			</p>
+			<h3>Example:</h3>
+				
+				<ul class="thumb">
+					<li><a href="#"><img src="./images/thumb1.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="./images/thumb2.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="./images/thumb3.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="./images/thumb4.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="./images/thumb5.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="./images/thumb6.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="./images/thumb7.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="./images/thumb8.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="./images/thumb9.jpg" alt="" /></a></li>
+				</ul>
+				
+				<div class="clear"></div>	
+			<h3>The Code:</h3>
+			
+			<pre><code>var opts={
+	changes:{
+		'top': '-32px',	'left': '-32px',
+		'width': '174px','height': '174px'
+	},
+	speed:300,
+	easing:'easeOutBack',
+	onstart:function(){
+		$('ul.thumb li').css({'z-index' : '0'})
+		$(this).addClass("hover").parent()
+					.parent().css({'z-index' : '10'})
+	}
+};
+$('ul.thumb li img').svAnimateHover(opts);</code></pre>
+	
+		</div>	
+		<div class="bottom"></div>	
+	</div>
+	
+	
+	
+	
+	
+</body>
+</html>

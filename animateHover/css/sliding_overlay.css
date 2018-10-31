@@ -1,0 +1,28 @@
+
+.div_overlay{
+background:red;
+float:left;
+width:150px;
+height:130px;
+margin-left:20px;
+position:relative;
+overflow:hidden;
+}
+.div_overlay div.background{
+background:#555;
+height:110px;
+width:130px;
+padding:10px;
+color:#eee;
+z-index:5;
+}
+.div_overlay div.overlay{
+background:#222;
+width:130px;
+height:0px;
+top:0px;
+z-index:10;
+position:relative;
+padding:10px;
+color:#888;
+}
